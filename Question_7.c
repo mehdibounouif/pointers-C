@@ -6,7 +6,7 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 11:19:56 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/04/30 11:39:14 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/04/30 12:12:36 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int	main()
 // - So The final result = 00000010 00000001 = 513.
 /*
 *	what is the output of the following program ?
-*
 *	A - Machine dependent.
 *	B - 513
 *	C - 258
