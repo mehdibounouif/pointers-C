@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Question_12.c                                      :+:      :+:    :+:   */
+/*   Question_13.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/01 10:38:38 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/05/01 10:44:57 by mbounoui         ###   ########.fr       */
+/*   Created: 2025/05/01 10:53:53 by mbounoui          #+#    #+#             */
+/*   Updated: 2025/05/01 11:02:13 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	f(int	x, int	*p, int **pp)
-{
-	int	y, z;
-
-	**pp += 1;
-	z = **pp;
-	*p += 2;
-	y = *p;
-	x += 3;
-	return (x + y + z);
-}
-
 int	main()
 {
-	int	c, *b, **a;
-	c = 4;
-	b = &c;
-	a = &b;
-	printf("%d\n", f(c, b, a));
+	int	a;
+	void	*b;
+
+	a = 12;
+	b = (int *)&a;
+	// correct way
+	// printf("%d\n", *(int *)b);
+	// you cannot be de-referencing a void* type pointers
+	printf("%d\n", *b);
+	return (0);
 }
 
-/*	What is the behavoir of this program ?
-*
-*	A - 18
-*	B - 19
-*	C - 21
-*	D - 22
+/*
+*	A - 12
+*	B - Compiler Error
+*	C - Run time error
+*	D - 0
 */
