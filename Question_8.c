@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Question_1.c                                       :+:      :+:    :+:   */
+/*   Question_8.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 08:54:49 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/05/01 07:45:05 by mbounoui         ###   ########.fr       */
+/*   Created: 2025/05/01 08:10:08 by mbounoui          #+#    #+#             */
+/*   Updated: 2025/05/01 08:34:26 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	fun(int x)
-{
-	x = 30;
-}
-
 int	main()
 {
-	int	y;
-
-	y = 10;
-	fun(y);
-	printf("%d\n", y);
+	char	*name = "Mehdi bounouif";
+	printf("%c\n", *&*&*&*&*name);
+	return (0);
 }
 
 /*
-*  what is the output of following program ?
-* A - 10 
-* B - 30 
-* C - Compiler Error
-* C - Runtime Error
+*	Compiler Error
+*	Garbage value
+*	Runtime error
+*	M
 */
