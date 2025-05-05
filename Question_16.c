@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Question_13.c                                      :+:      :+:    :+:   */
+/*   Question_16.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/01 10:53:53 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/05/04 13:29:43 by mbounoui         ###   ########.fr       */
+/*   Created: 2025/05/04 13:55:01 by mbounoui          #+#    #+#             */
+/*   Updated: 2025/05/05 07:55:34 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
+void	f(char **);
+
 int	main()
 {
-	int	a;
-	void	*b;
-
-	a = 12;
-	b = (int *)&a;
-	// correct way
-	// printf("%d\n", *(int *)b);
-	// you cannot be de-referencing a void* type pointers
-	printf("%d\n", *b);
+	char	*v[] = {"ab", "cd", "ef", "gh", "ij", "kl"};
+	f(v);
 	return (0);
+}
+void	f(char **p)
+{
+	char	*t;
+	t = (p += sizeof(int))[-1];
+	printf("%s\n", t);
 }
 
 /*
-*	A - 12
-*	B - Compiler Error
-*	C - Run time error
-*	D - 0
+*	what is the output of this program ?
+*	A - ab
+*	B - cd
+*	C - ef
+*	D - gh
 */
