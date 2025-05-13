@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Question_12.c                                      :+:      :+:    :+:   */
+/*   Example_1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/01 10:38:38 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/05/13 11:33:25 by mbounoui         ###   ########.fr       */
+/*   Created: 2025/05/13 15:48:15 by mbounoui          #+#    #+#             */
+/*   Updated: 2025/05/13 15:59:43 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	f(int	x, int	*p, int **pp)
-{
-	int	y, z;
 
-	**pp += 1;
-	z = **pp; // z = 5;
-	*p += 2;
-	y = *p; // y = 7;
-	x += 3; // x = 7;
-	return (x + y + z);  // 7 + 7 + 5 = 19;
+void	add_1(int	a, int	b)
+{
+	printf("%d\n", a + b);
+}
+
+int	add_2(int	a, int	b)
+{
+	return (a + b);
 }
 
 int	main()
 {
-	int	c, *b, **a;
-	c = 4;
-	b = &c;
-	a = &b;
-	printf("%d\n", f(c, b, a));
-}
+	void	(*fun_1)(int, int);
+	int	(*fun_2)(int, int);
+	fun_1 = add_1;
+	fun_2 = add_2;
 
-/*	What is the behavoir of this program ?
-*
-*	A - 18
-*	B - 19
-*	C - 21
-*	D - 22
-*/
+	fun_1(10, 10);
+	printf("%d\n", fun_2(10, 10));
+	return (0);
+}

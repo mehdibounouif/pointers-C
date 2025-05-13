@@ -6,7 +6,7 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 09:57:22 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/05/01 10:30:45 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/05/13 11:22:12 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ void	swap(int *a, int *b)
 int	main()
 {
 	int	a;
-	int	*b = &a;
+	int	b;
 
-	a = -2147483647;
-	*b = -2147483648;
-	swap(&a, b);
-	printf("a = %d, b = %d\n", a, *b);
+	a = 10;
+	b = 20;
+	swap(&a, &b);
+	printf("a = %d, b = %d\n", a, b);
 }

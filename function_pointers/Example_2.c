@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Question_12.c                                      :+:      :+:    :+:   */
+/*   Example_2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/01 10:38:38 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/05/13 11:33:25 by mbounoui         ###   ########.fr       */
+/*   Created: 2025/05/13 16:15:41 by mbounoui          #+#    #+#             */
+/*   Updated: 2025/05/13 16:18:52 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	f(int	x, int	*p, int **pp)
+int	add(int	a, int	b)
 {
-	int	y, z;
+	return (a + b);
+}
 
-	**pp += 1;
-	z = **pp; // z = 5;
-	*p += 2;
-	y = *p; // y = 7;
-	x += 3; // x = 7;
-	return (x + y + z);  // 7 + 7 + 5 = 19;
+int	subtract(int a, int b)
+{
+	return (a - b);
+}
+
+void	calc(int a, int b, int (*fun)(int, int))
+{
+	printf("%d\n", fun(a, b));
 }
 
 int	main()
 {
-	int	c, *b, **a;
-	c = 4;
-	b = &c;
-	a = &b;
-	printf("%d\n", f(c, b, a));
+	int	a = 10;
+	int	b = 5;
+	calc(a, b, add);
+	calc(a, b, subtract);
+	return (0);
 }
-
-/*	What is the behavoir of this program ?
-*
-*	A - 18
-*	B - 19
-*	C - 21
-*	D - 22
-*/
