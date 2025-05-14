@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Example_2.c                                        :+:      :+:    :+:   */
+/*   Example_4.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/13 16:15:41 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/05/14 07:56:57 by mbounoui         ###   ########.fr       */
+/*   Created: 2025/05/14 08:01:37 by mbounoui          #+#    #+#             */
+/*   Updated: 2025/05/14 08:14:02 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,30 @@ int	add(int	a, int	b)
 	return (a + b);
 }
 
-int	subtract(int a, int b)
+int	sub(int	a, int	b)
 {
 	return (a - b);
 }
 
-void	calc(int a, int b, int (*fun)(int, int))
+int	mul(int	a, int	b)
 {
-	printf("%d\n", fun(a, b));
+	return (a * b);
+}
+
+int	div(int	a, int	b)
+{
+	return (a / b);
 }
 
 int	main()
 {
-	int	a = 10;
-	int	b = 5;
-	calc(a, b, add);
-	calc(a, b, subtract);
+	int	(*funs[])(int, int) = {add, sub, mul, div};
+	int	a = 30;
+	int	b = 20;
+
+	printf("Sum: %d\n", funs[0](a, b));
+	printf("sub: %d\n", funs[1](a, b));
+	printf("mul: %d\n", funs[2](a, b));
+	printf("div: %d\n", funs[3](a, b));
 	return (0);
 }

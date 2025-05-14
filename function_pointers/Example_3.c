@@ -6,12 +6,11 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:29:37 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/05/13 16:51:16 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/05/14 07:58:41 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 typedef	struct	s_rect
 {
@@ -49,12 +48,11 @@ void	init(t_rect *r)
 
 int	main()
 {
-	t_rect	*r;
-	r = malloc(sizeof(t_rect));
+	t_rect	r;
 
-	init(r);
-	r->set(r, 10, 5);
-	r->show(r);
-	printf("Rectangle area: %d\n", r->area(r));
+	init(&r);
+	r.set(&r, 10, 5);
+	r.show(&r);
+	printf("Rectangle area: %d\n", r.area(&r));
 	return (0);
 }
